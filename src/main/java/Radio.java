@@ -37,11 +37,6 @@ public class Radio {
         }
     }
 
-    public void numberStation() {
-        if (currentStation == 2) ;
-        return;
-    }
-
     public int getSoundVolume() {
         return soundVolume;
     }
