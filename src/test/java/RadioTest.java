@@ -31,6 +31,19 @@ public class RadioTest {
 
     @Test
 
+    public void setCurrentStationOutOfRangNew() {
+        Radio radio = new Radio(23);
+
+        radio.setCurrentStation(4);
+        radio.setCurrentStation(23);
+        int actual = radio.getCurrentStation();
+        int expected = 4;
+
+        Assertions.assertEquals(actual, expected);
+    }
+
+    @Test
+
     public void setCurrentStationBeforeOfRang() {
         Radio radio = new Radio();
 
@@ -55,6 +68,7 @@ public class RadioTest {
         Assertions.assertEquals(actual, expected);
     }
 
+
     @Test
 
     public void setCurrentStationNext2() {
@@ -70,6 +84,19 @@ public class RadioTest {
 
     @Test
 
+    public void setCurrentStationNext2New() {
+        Radio radio = new Radio(14);
+
+        radio.setCurrentStation(9);
+        radio.next();
+        int actual = radio.getCurrentStation();
+        int expected = 10;
+
+        Assertions.assertEquals(actual, expected);
+    }
+
+    @Test
+
     public void setCurrentStationPrev() {
         Radio radio = new Radio();
 
@@ -77,6 +104,19 @@ public class RadioTest {
         radio.prev();
         int actual = radio.getCurrentStation();
         int expected = 9;
+
+        Assertions.assertEquals(actual, expected);
+    }
+
+    @Test
+
+    public void setCurrentStationPrevNew() {
+        Radio radio = new Radio(19);
+
+        radio.setCurrentStation(0);
+        radio.prev();
+        int actual = radio.getCurrentStation();
+        int expected = 18;
 
         Assertions.assertEquals(actual, expected);
     }
